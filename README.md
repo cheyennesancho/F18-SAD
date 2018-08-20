@@ -13,8 +13,11 @@ With this project, we used the Agile methodology to organize and set-up goals. U
 For the development of this project, we decided to go with creating a web application using Spring and Angular, with MySQL as our database.
 
 TO DO:
-Design Specification
+Design Specification 
+
 Requirements Specification
+
 Testing Specification
+
 User Documentation
 
