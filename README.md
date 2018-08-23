@@ -10,7 +10,7 @@ Benjamin Buzeta
 
 With this project, we used the Agile methodology to organize and set-up goals. Using Trello, we used a Kanban method for tracking goals and tasks done for the project.
 
-For the development of this project, we decided to go with creating a web application using Spring and Angular, with MySQL as our database.
+For the development of this project, we decided to go with creating a web application using Node.js and Angular, with MySQL as our database.
 
 TO DO:
 
