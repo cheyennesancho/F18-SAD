@@ -3,9 +3,13 @@ Repo containing the project for Software Application Domain (Fall 2018).
 
 Team Members:
 Branden Morgan (Team Lead/Scrum Master)
+
 Cheyenne Sancho
+
 Tyler Whitfield
+
 Tyler Gambrell
+
 Benjamin Buzeta
 
 With this project, we used the Agile methodology to organize and set-up goals. Using Trello, we used a Kanban method for tracking goals and tasks done for the project.
