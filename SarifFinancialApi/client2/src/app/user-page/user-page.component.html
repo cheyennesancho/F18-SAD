@@ -1,5 +1,13 @@
-<h3>Welcome admin</h3>
+<h3>Welcome</h3>
 <form #adminForm="ngForm">
 
+  <div class="col col-sm-12">
+    <h2> {{indicator}} </h2>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="logOut()" >Log out</button>
+
+  </div>
 
 </form>

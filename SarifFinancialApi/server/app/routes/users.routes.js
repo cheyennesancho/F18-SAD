@@ -11,7 +11,7 @@ module.exports = function(app) {
     // Retrieve a single user by Id
     app.get('/api/users/:userId', users.findById);
 
-    // Update a user with Id
+    // Update a user with I
     app.put('/api/users', users.update);
 
     // Delete a user with Id

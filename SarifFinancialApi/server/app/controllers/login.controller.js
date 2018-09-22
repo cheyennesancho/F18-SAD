@@ -8,23 +8,34 @@ const Users = db.users;
 exports.sendData = (req, res) => {
     let username = req.body.userName,
         password = req.body.userPassword;
-     var   access = 1;
+    var   access = 1;
     console.log("connection made")
     Users.findOne({where: {userName: username}}).then(function (user) {
         if (!user){
             access = 0;
-            res.json(access);
+            let user = {
+                userId: -1,
+                userName: "temp",
+                userPassword: "Temp",
+                userRole: "Temp"
+            }
+
+            res.json(user);
         }
         else if (user.userPassword != password){
-            access = 0;
-            res.json(access);
+            let user = {
+                userId: -1,
+                userName: "Temp",
+                userPassword: "Temp",
+                userRole: "Temp"
+            }
+            res.json(user);
         }
         else{
-            res.json(access);
+            res.json(user);
         }
         console.log("connection made");
 
     })
 
 };
-

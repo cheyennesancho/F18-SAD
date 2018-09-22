@@ -1,7 +1,11 @@
+var cookieSession = require('cookie-session');
 var express = require('express');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json())
+var MemoryStore =session.MemoryStore;
 
 const cors = require('cors')
 const corsOptions = {
@@ -11,6 +15,12 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
+app.use(cors({
+        //origin: config.origin,
+        credentials: true
+}));
+
+
 const db = require('./app/config/db.config.js');
 
 // force: true will drop the table if it already exists
@@ -18,6 +28,9 @@ db.sequelize.sync({force: true}).then(() => {
     console.log('Drop and Resync with { force: true }');
     initial();
 });
+
+app.set('trust proxy', true)
+
 
 require('./app/routes/login.routes.js')(app);
 require('./app/routes/users.routes.js')(app);
@@ -32,13 +45,17 @@ var server = app.listen(8080, function () {
     console.log("App listening at http://%s:%s", host, port);
 })
 
+
+
+
 function initial(){
 
     let users = [
         {
             userId: 1,
             userName: "Joe",
-            userPassword: "Thomas"
+            userPassword: "Thomas",
+            userRole: "admin"
         },
         {
             userId: 2,
