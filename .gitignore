@@ -1,0 +1,9 @@
+# Ingnore folder named 'node_modules'
+node_modules/
+
+#Ignore file named 'Thumbs.db'
+Thumbs.db
+
+# Ingnore folder named 'node_module333s'
+node_modules333/
+
