@@ -26,3 +26,6 @@ Testing Specification
 
 User Documentation
 
+Starting server: node server.js
+
+Starting client: ng serve
