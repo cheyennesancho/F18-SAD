@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
           this.comp.setSession(this.user.userId, this.user.userName, this.user.userRole);
         }
         else {
-          this.invalidIndicator = 'Loggin failed';
+          this.invalidIndicator = 'Login failed';
         }
       }
     );
