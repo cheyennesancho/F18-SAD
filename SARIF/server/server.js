@@ -52,13 +52,11 @@ function initial(){
 
     let users = [
         {
-            userId: 1,
             userName: "Joe",
             userPassword: "Thomas",
             userRole: "admin"
         },
         {
-            userId: 2,
             userName: "Bill",
             userPassword: "James"
         },

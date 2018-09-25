@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         userName: {
             type: Sequelize.STRING,
-            allowNull: false
+            allowNull: true
         },
         userRole: {
             type: Sequelize.STRING,
@@ -16,7 +16,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         userPassword: {
             type: Sequelize.STRING,
-            allowNull: false
+            allowNull: true
         },
         firstName: {
             type: Sequelize.STRING,
