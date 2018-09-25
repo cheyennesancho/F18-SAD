@@ -20,7 +20,6 @@ app.use(cors({
         credentials: true
 }));
 
-
 const db = require('./app/config/db.config.js');
 
 // force: true will drop the table if it already exists
@@ -31,10 +30,9 @@ db.sequelize.sync({force: true}).then(() => {
 
 app.set('trust proxy', true)
 
-
 require('./app/routes/login.routes.js')(app);
 require('./app/routes/users.routes.js')(app);
-
+require('./app/routes/log.routes.js')(app);
 
 // Create a Server
 var server = app.listen(8080, function () {
@@ -44,9 +42,6 @@ var server = app.listen(8080, function () {
 
     console.log("App listening at http://%s:%s", host, port);
 })
-
-
-
 
 function initial(){
 

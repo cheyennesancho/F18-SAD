@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { UserLogService } from '../user-log.service';
 import { AppComponent } from '../app.component';
 import { User } from '../user';
+
 @Component({
   providers: [AppComponent],
   selector: 'app-login',
@@ -18,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router, private loginService: LoginService, private comp: AppComponent,
+    private logData: UserLogService
   ) { }
 
   ngOnInit() {
@@ -31,6 +34,7 @@ export class LoginComponent implements OnInit {
 
         if (this.user.userId > 0) {
           this.router.navigate(['UserPage']);
+          this.logData.create(this.username, 'User successful login').subscribe();
           this.comp.setSession(this.user.userId, this.user.userName, this.user.userRole);
         }
         else {
