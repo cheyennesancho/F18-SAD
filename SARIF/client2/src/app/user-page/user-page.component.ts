@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 import {AppComponent} from '../app.component';
 
@@ -25,5 +25,8 @@ export class UserPageComponent implements OnInit {
   logOut() {
     this.comp.delSession();
     this.router.navigate(['']);
+  }
+  createUser() {
+    this.router.navigate(['AddUser']);
   }
 }
