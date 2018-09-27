@@ -9,13 +9,13 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
         ssl: true
     },
     operatorsAliases: false,
-
-    /*pool: {
+    pool: {
         max: env.max,
         min: env.pool.min,
         acquire: env.pool.acquire,
-        idle: env.pool.idle
-    }*/
+        idle: env.pool.idle,
+        evict: env.pool.evict
+    }
 });
 
 const db = {};

@@ -1,4 +1,5 @@
 const db = require('../config/db.config.js');
+const sequelize = require('sequelize');
 const Users = db.users;
 
 /*exports.getData = (req, res) => {
@@ -21,6 +22,7 @@ exports.sendData = (req, res) => {
             }
 
             res.json(user);
+
         }
         else if (user.userPassword != password){
             let user = {

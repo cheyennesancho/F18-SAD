@@ -9,13 +9,15 @@ import { Ng2Webstorage } from 'ngx-webstorage';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     LoginComponent,
-    UserPageComponent
+    UserPageComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

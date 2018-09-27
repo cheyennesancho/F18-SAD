@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 import {AppComponent} from '../app.component';
 import { UserLogService } from '../user-log.service';
@@ -28,6 +28,7 @@ export class UserPageComponent implements OnInit {
     this.comp.delSession();
     this.router.navigate(['']);
   }
+<<<<<<< HEAD
 
   onLog() {
     this.logData.findAll().subscribe(
@@ -36,5 +37,9 @@ export class UserPageComponent implements OnInit {
         this.users = user;
       }
     )
+=======
+  createUser() {
+    this.router.navigate(['AddUser']);
+>>>>>>> Tyler-G-Journal
   }
 }
