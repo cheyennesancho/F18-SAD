@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 import {AppComponent} from '../app.component';
+import { UserLogService } from '../user-log.service';
 
 @Component({
   providers: [AppComponent],
@@ -12,8 +13,9 @@ import {AppComponent} from '../app.component';
 })
 export class UserPageComponent implements OnInit {
   indicator = '';
+  users = [];
 
-  constructor(private router: Router, private loginService: LoginService, private comp: AppComponent) { }
+  constructor(private router: Router, private loginService: LoginService, private comp: AppComponent, private logData: UserLogService) { }
 
   ngOnInit() {
     this.onOpened();
@@ -25,5 +27,14 @@ export class UserPageComponent implements OnInit {
   logOut() {
     this.comp.delSession();
     this.router.navigate(['']);
+  }
+
+  onLog() {
+    this.logData.findAll().subscribe(
+      (user) => {
+        document.getElementById("logTable").hidden = false; //Unhide table after onLog click
+        this.users = user;
+      }
+    )
   }
 }
