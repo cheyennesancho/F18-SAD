@@ -2,6 +2,9 @@
 #Ignore file named 'Thumbs.db'
 Thumbs.db
 
+#Ignore file named 'workspace.xml'
+workspace.xml
+
 # Ingnore folder named 'node_module333s'
 node_modules333/
 
