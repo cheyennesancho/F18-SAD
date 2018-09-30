@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
+
 
  @Component({
   selector: 'app-userdetails',
@@ -13,6 +14,7 @@ export class UserDetailsComponent implements OnInit {
   user = new User();
   data = [];
    constructor(
+     private router: Router,
     private userService: UserService,
     private route: ActivatedRoute
   ) { }
@@ -29,6 +31,9 @@ export class UserDetailsComponent implements OnInit {
 
   updateUser() {
     this.userService.updateUser(this.user)
-      .subscribe(() => { console.log("User Updated Successfully")})
+      .subscribe(() => { 
+        console.log("User Updated Successfully");
+        console.log(this.user);
+        this.router.navigate(['UserPage']);})
   }
  }

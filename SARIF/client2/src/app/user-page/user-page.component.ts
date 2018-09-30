@@ -60,7 +60,6 @@ export class UserPageComponent implements OnInit {
   getUser(id: string) {
     // let id = document.getElementById("userId").;
     let userId = +id;
-    console.log(userId);
     this.userData.getUser(userId).subscribe(
       (getEditUser) => {
         this.editUser = getEditUser;
