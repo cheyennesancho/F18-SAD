@@ -4,7 +4,12 @@ import { Observable } from 'rxjs';
 import { User } from '../user';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    "Access-Control-Allow-Headers": '*', 
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+  })
 };
 
 @Injectable({
@@ -16,27 +21,36 @@ export class UserService {
     private http: HttpClient
   ) { }
 
-  getUsers (): Observable<User[]> {
+  findAll(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl, httpOptions);
+  }
+
+  getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
   }
 
-  getUser(userId: number): Observable<User> {
-    const url = `${this.usersUrl}/${userId}`;
-    return this.http.get<User>(url);
+  // getUser(userId: number): Observable<User> {
+  //   const url = `${this.usersUrl}/${userId}`;
+  //   return this.http.get<User>(url);
+  // }
+
+  getUser(id: number): Observable<any> {
+    console.log(`${this.usersUrl}/${id}`)
+    return this.http.get(`${this.usersUrl}/${id}`, httpOptions)
   }
 
-  addUser (user: User): Observable<User> {
+  addUser(user: User): Observable<User> {
     return this.http.post<User>(this.usersUrl, user, httpOptions);
   }
 
-  deleteUser (user: User | number): Observable<User> {
+  deleteUser(user: User | number): Observable<User> {
     const userId = typeof user === 'number' ? user : user.userId;
     const url = `${this.usersUrl}/${userId}`;
 
     return this.http.delete<User>(url, httpOptions);
   }
 
-  updateUser (user: User): Observable<any> {
+  updateUser(user: User): Observable<any> {
     return this.http.put(this.usersUrl, User, httpOptions);
   }
 }
