@@ -33,6 +33,7 @@ export class UserPageComponent implements OnInit {
   }
 
   logOut() {
+    this.logData.create(this.comp.getUserName(), 'User Logout').subscribe();
     this.comp.delSession();
     this.router.navigate(['']);
   }

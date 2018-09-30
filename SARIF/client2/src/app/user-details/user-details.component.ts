@@ -1,11 +1,13 @@
+
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { UserLogService } from '../services/user-log.service';
 
 
- @Component({
+@Component({
   selector: 'app-userdetails',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.css']
@@ -13,12 +15,14 @@ import { AppComponent } from '../app.component';
 export class UserDetailsComponent implements OnInit {
   user = new User();
   data = [];
-   constructor(
-     private router: Router,
+  constructor(
+    private router: Router,
     private userService: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private logData: UserLogService,
+    private comp: AppComponent,
   ) { }
-   ngOnInit() {
+  ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.userService.getUser(id).subscribe(
@@ -30,10 +34,14 @@ export class UserDetailsComponent implements OnInit {
   }
 
   updateUser() {
-    this.userService.updateUser(this.user)
-      .subscribe(() => { 
+    let userData = [];
+    userData = this.data;
+    this.userService.updateUser(userData)
+      .subscribe(() => {
         console.log("User Updated Successfully");
-        console.log(this.user);
-        this.router.navigate(['UserPage']);})
+        console.log(userData);
+        this.logData.create(this.comp.getUserName(), 'Updated user').subscribe();
+        this.router.navigate(['UserPage']);
+      })
   }
- }
+}

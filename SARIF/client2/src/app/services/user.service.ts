@@ -50,8 +50,9 @@ export class UserService {
     return this.http.delete<User>(url, httpOptions);
   }
 
-  updateUser(user: User): Observable<any> {
-    return this.http.put(this.usersUrl, user, httpOptions);
+  updateUser(user): Observable<any> {
+    const body = JSON.stringify(user);
+    return this.http.put(this.usersUrl, body, httpOptions);
   }
 
   

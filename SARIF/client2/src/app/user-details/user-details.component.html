@@ -9,7 +9,7 @@
       <th>Active</th>
     </tr>
     <tr>
-      <td>{{ data.userId }}</td>
+      <td></td>
       <td>{{ data.firstName }}</td>
       <td>{{ data.lastName }}</td>
       <td>{{ data.userName }}</td>
@@ -18,8 +18,7 @@
       <td>{{ data.active }}</td>
     </tr>
     <tr>
-      <td><input type="text" class="form-control" id="userId" required
-      [(ngModel)]="data.userId" name="userId" #firstName="ngModel"></td>
+      <td>{{ data.userId }}</td>
       <td><input type="text" class="form-control" id="firstName" required
       [(ngModel)]="data.firstName" name="firstName" #firstName="ngModel"></td>
       <td><input type="text" class="form-control" id="lastName" required
