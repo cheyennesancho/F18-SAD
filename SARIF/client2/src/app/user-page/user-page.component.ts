@@ -70,4 +70,8 @@ export class UserPageComponent implements OnInit {
       }
     )
   }
+
+  createUser() {
+    this.router.navigate(['AddUser']);
+  }
 }

@@ -19,7 +19,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     LoginComponent,
     UserPageComponent,
     AddUserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -41,5 +41,5 @@ export class AppRoutingModule { }
 export const routingComponents = [
   LoginComponent,
   UserPageComponent,
-  UserDetailsComponent
+  UserDetailsComponent,
 ]

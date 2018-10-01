@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
-
+import { UserLogService } from '../services/user-log.service';
 import { Location } from '@angular/common';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-add-user',
@@ -17,7 +18,9 @@ export class AddUserComponent {
 
   constructor(
     private userService: UserService,
-    private location: Location
+    private location: Location,
+    private logData: UserLogService,
+    private comp: AppComponent,
   ) { }
 
   newUser(): void {
@@ -36,6 +39,8 @@ export class AddUserComponent {
 
   private save(): void {
     this.userService.addUser(this.user)
-        .subscribe();
+        .subscribe(() => {
+          this.logData.create(this.comp.getUserName(), 'Created user ' + this.user.firstName).subscribe();
+        });
   }
 }
