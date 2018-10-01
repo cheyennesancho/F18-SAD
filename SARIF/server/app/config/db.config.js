@@ -24,6 +24,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //Models/tables
+db.chartAccount = require('../model/chartAccount.model')(sequelize, Sequelize);
 db.users = require('../model/users.model.js')(sequelize, Sequelize);
 db.log = require('../model/log.model.js')(sequelize, Sequelize);
 
