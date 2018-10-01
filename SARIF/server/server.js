@@ -10,7 +10,8 @@ var MemoryStore =session.MemoryStore;
 const cors = require('cors')
 const corsOptions = {
     origin: 'http://localhost:4200',
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
 }
 
 app.use(cors(corsOptions))
@@ -19,6 +20,17 @@ app.use(cors({
         //origin: config.origin,
         credentials: true
 }));
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, Content-Type');
+    //res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    if (req.method === "OPTIONS") {
+        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+        return res.status(200).json({});
+    }
+    next();
+})
 
 const db = require('./app/config/db.config.js');
 

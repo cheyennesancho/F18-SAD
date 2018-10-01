@@ -29,7 +29,7 @@ exports.findById = (req, res) => {
 // Update a Customer
 exports.update = (req, res) => {
     let user = req.body;
-    let id = req.body.id;
+    let id = req.body.userId;
     Users.update(user,
         { where: {userId: id} }
     ).then(() => {

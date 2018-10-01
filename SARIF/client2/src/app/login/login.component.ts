@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
-import { LoginService } from '../login.service';
-import { UserLogService } from '../user-log.service';
-=======
+import { UserLogService } from '../services/user-log.service';
 import { LoginService } from '../services/login.service';
->>>>>>> Tyler-G-Journal
 import { AppComponent } from '../app.component';
 import { User } from '../user';
 
@@ -23,7 +19,9 @@ export class LoginComponent implements OnInit {
   user: User;
 
   constructor(
-    private router: Router, private loginService: LoginService, private comp: AppComponent,
+    private router: Router, 
+    private loginService: LoginService, 
+    private comp: AppComponent,
     private logData: UserLogService
   ) { }
 
