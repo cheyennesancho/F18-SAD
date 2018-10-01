@@ -1,3 +1,20 @@
 h3, label {
     color: white;
+    text-align: center;
+}
+
+.form-group{
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    border: 3px;
+    padding: 10px;
+    text-align: center;
+}
+
+.form-btn{
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    text-align: center;
 }
