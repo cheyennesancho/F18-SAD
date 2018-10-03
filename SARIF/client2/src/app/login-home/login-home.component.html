@@ -1,0 +1,11 @@
+
+
+<div id="center">
+  <div id="image">
+  </div>
+</div>
+
+<ng-container [ngSwitch]="toggle">
+  <app-add-user *ngSwitchCase="2"></app-add-user>
+  <app-login *ngSwitchCase="1"></app-login>
+</ng-container>

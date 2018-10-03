@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLogService } from '../services/user-log.service';
 import { LoginService } from '../services/login.service';
 import { AppComponent } from '../app.component';
+import { LoginHomeComponent} from '../login-home/login-home.component';
 import { User } from '../user';
+import {SharedDataService } from '../services/shared-data.service';
 
 @Component({
-  providers: [AppComponent],
+  providers: [AppComponent, LoginHomeComponent],
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -18,11 +20,14 @@ export class LoginComponent implements OnInit {
   invalidIndicator = '';
   user: User;
 
+
   constructor(
     private router: Router, 
     private loginService: LoginService, 
     private comp: AppComponent,
-    private logData: UserLogService
+    private logData: UserLogService,
+    private home: LoginHomeComponent,
+    private data: SharedDataService
   ) { }
 
   ngOnInit() {
@@ -46,7 +51,10 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  toggler(){
+    this.data.changeToggle(2);
 
+  }
 
 }
 

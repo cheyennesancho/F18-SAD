@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service';
 import { UserLogService } from '../services/user-log.service';
 import { Location } from '@angular/common';
 import { AppComponent } from '../app.component';
+import {SharedDataService } from '../services/shared-data.service';
 
 @Component({
   selector: 'app-add-user',
@@ -21,6 +22,7 @@ export class AddUserComponent {
     private location: Location,
     private logData: UserLogService,
     private comp: AppComponent,
+    private data: SharedDataService
   ) { }
 
   newUser(): void {
@@ -34,7 +36,7 @@ export class AddUserComponent {
  }
 
   goBack(): void {
-    this.location.back();
+    this.data.changeToggle(1);
   }
 
   private save(): void {

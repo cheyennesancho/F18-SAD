@@ -1,9 +1,6 @@
 
 <form #addUserForm="ngForm" >
-  <div id="center">
-  <div id="image">
-  </div>
-  </div>
+
   <div id="center2">
     <div id="height">
       <h3>Login</h3>
@@ -39,6 +36,7 @@
   </p>
   <div class="form-group">
     <button class="btn btn-primary" (click)="onSubmit()" [disabled]="!addUserForm.form.valid">Login</button>
+    <button class="btn btn-link" (click)="toggler()" id="button1" >Register</button>
 
   </div>
   <div class="col col-sm-12">
