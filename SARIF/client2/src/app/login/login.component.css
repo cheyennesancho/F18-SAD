@@ -5,3 +5,38 @@ h2{
 h3{
     color: white;
 }
+
+label.required { color: white; }
+
+#image {
+  background-image:url("../../assets/logo.png");
+  background-position: center;
+  background-size: 200px 350px;
+  width: 200px;
+  height: 350px;
+
+}
+
+#center {
+  position: relative;
+  width: 10%;
+  margin: 0 auto;
+}
+
+#center2 {
+  position: relative;
+  width: 14%;
+  margin: 0 auto;
+
+}
+
+#height {
+  margin-top:30px;
+  width: 400px
+}
+
+#image2 {
+  width: 250px;
+  height: 490px;
+
+}

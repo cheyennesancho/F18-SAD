@@ -1,8 +1,15 @@
-<h3>Login</h3>
-<form #addUserForm="ngForm">
-  <div class="horizontalgap" style="width:10px">
+
+<form #addUserForm="ngForm" >
+  <div id="center">
+  <div id="image">
+  </div>
+  </div>
+  <div id="center2">
+    <div id="height">
+      <h3>Login</h3>
+  <div class="horizontalgap" style="width:250px">
 <div class="form-group">
-  <label for="username">Username</label>
+  <label class ='required' for="username">Username</label>
   <input type="text" class="form-control" id="username" placeholder="Username"
          required [(ngModel)]="username" name="username" #usernam="ngModel">
 
@@ -15,8 +22,8 @@
   </div>
 
   <div class="form-group">
-    <div class="horizontalgap" style="width:10px">
-    <label for="password">Password</label>
+    <div class="horizontalgap" style="width:250px">
+    <label class ='required'  for="password">Password</label>
     <input type="text" class="form-control" id="password" placeholder="Password"
            required [(ngModel)]="password" name="password" #passw="ngModel">
 
@@ -37,6 +44,9 @@
   <div class="col col-sm-12">
     <h2> {{invalidIndicator }} </h2>
   </div>
+    </div>
+  </div>
+
 
 
 </form>
