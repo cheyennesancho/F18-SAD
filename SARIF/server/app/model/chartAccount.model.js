@@ -10,7 +10,35 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false,
         },
-        code: {
+        accountSubType: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        reportType: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        accountNumber: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+        normalSide: {
+          type: Sequelize.STRING,
+          allowNull: false
+        },
+        originalBalance: {
+          type: Sequelize.DECIMAL,
+          allowNull: false
+        },
+        currentBalance: {
+            type: Sequelize.DECIMAL,
+            allowNull: false
+        },
+        active: {
+          type: Sequelize.STRING,
+            allowNull: false
+        },
+        comment: {
             type: Sequelize.STRING,
             allowNull: false
         },

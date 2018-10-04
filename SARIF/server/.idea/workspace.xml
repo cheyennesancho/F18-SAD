@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ec3ea87d-68f5-40e3-aaaf-6edd681a32bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/chartAccount.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/chartAccount.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/users.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/users.model.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,23 +91,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="167" />
+          <entry key="js" value="654" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="167" />
+          <entry key="JavaScript" value="654" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="9" />
+          <entry key="js" value="10" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="9" />
+          <entry key="JavaScript" value="10" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
@@ -136,7 +138,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../Translation-Verification-Tool/Frontend/AngularApp/src/app/services/users/user.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -147,7 +149,20 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/model/chartAccount.model.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/model/users.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -226,12 +241,13 @@
         <option value="$PROJECT_DIR$/model/users.model.js" />
         <option value="$PROJECT_DIR$/app/routes/users.routes.js" />
         <option value="$PROJECT_DIR$/app/routes/login.routes.js" />
-        <option value="$PROJECT_DIR$/app/model/users.model.js" />
         <option value="$PROJECT_DIR$/app/controllers/login.controller.js" />
         <option value="$PROJECT_DIR$/app/config/env.js" />
         <option value="$PROJECT_DIR$/app/config/db.config.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/controllers/chartAccount.controller.js" />
+        <option value="$PROJECT_DIR$/app/model/chartAccount.model.js" />
+        <option value="$PROJECT_DIR$/app/model/users.model.js" />
       </list>
     </option>
   </component>
@@ -330,12 +346,12 @@
       <workItem from="1537893037033" duration="8797000" />
       <workItem from="1538363992066" duration="1636000" />
       <workItem from="1538527921826" duration="601000" />
-      <workItem from="1538538624398" duration="774000" />
+      <workItem from="1538538624398" duration="1443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60248000" />
+    <option name="totallyTimeSpent" value="60917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="159" width="1480" height="890" extended-state="0" />
@@ -427,13 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/users.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/users.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -469,9 +478,6 @@
           <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/chartAccount.model.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/db.config.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -515,6 +521,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="26" column="61" lean-forward="true" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/chartAccount.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/users.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
         </state>
       </provider>
     </entry>
