@@ -4,3 +4,20 @@ td {
 table, h3, h2 {
     color: white;
 }
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #161616;
+  overflow-x: hidden;
+  padding-top: 20px;
+  float: left;
+}
+
+.right{
+  margin-left: 200px;
+}

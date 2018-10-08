@@ -14,7 +14,7 @@
 </div>
 
   <div [hidden]="usernam.valid || usernam.pristine"
-       class="alert alert-danger">
+       class="alert alert-danger" style="width: 250px;">
     Username is required
   </div>
 
@@ -27,7 +27,7 @@
   </div>
 
     <div [hidden]="passw.valid || passw.pristine"
-         class="alert alert-danger">
+         class="alert alert-danger" style="width: 250px;">
       Password is required
     </div>
   </div>
@@ -39,8 +39,8 @@
     <button class="btn btn-link" (click)="toggler()" id="button1" >Register</button>
 
   </div>
-  <div class="col col-sm-12">
-    <h2> {{invalidIndicator }} </h2>
+  <div [hidden]="notLogged" class="alert alert-danger"  style="width: 250px;">
+    Incorrect username or password
   </div>
     </div>
   </div>

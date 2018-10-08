@@ -60,13 +60,20 @@ function initial(){
 
     let users = [
         {
-            userName: "Joe",
-            userPassword: "Thomas",
+            userName: "admin",
+            userPassword: "password",
             userRole: "admin"
         },
         {
-            userName: "Bill",
-            userPassword: "James"
+            userName: "manager",
+            userPassword: "password",
+            userRole: "manager"
+        },
+        {
+            userName: "accountant",
+            userPassword: "password",
+            userRole: "accountant"
+
         },
 
     ]

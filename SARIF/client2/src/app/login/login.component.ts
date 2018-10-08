@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   password: string;
   username: string;
+  notLogged: Boolean = true;
   invalidIndicator = '';
   user: User;
 
@@ -46,6 +47,7 @@ export class LoginComponent implements OnInit {
         }
         else {
           this.invalidIndicator = 'Login failed';
+          this.notLogged = false;
         }
       }
     );

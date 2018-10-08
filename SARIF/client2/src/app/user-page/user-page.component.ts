@@ -14,6 +14,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserPageComponent implements OnInit {
   indicator = '';
+  access = 1;
   users = [];
   logs = [];
   editUser = [];
@@ -30,6 +31,15 @@ export class UserPageComponent implements OnInit {
   }
   onOpened() {
       this.indicator = this.comp.getUserName();
+      if(this.comp.getRole() === 'admin'){
+        this.access = 1;
+      }
+      else if(this.comp.getRole() === 'manager') {
+        this.access = 2;
+      }
+      else{
+        this.access = 3;
+      }
   }
 
   logOut() {
