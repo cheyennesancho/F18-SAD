@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ec3ea87d-68f5-40e3-aaaf-6edd681a32bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/node_modules/form-data/README.md.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client2/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,10 +121,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="408">
               <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
             </state>
           </provider>
@@ -156,7 +148,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/model/chartAccount.model.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -274,7 +266,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="362" />
     <option name="y" value="31" />
     <option name="width" value="1480" />
@@ -357,15 +349,15 @@
       <workItem from="1538527921826" duration="601000" />
       <workItem from="1538538624398" duration="2040000" />
       <workItem from="1538667031134" duration="49000" />
-      <workItem from="1539018906828" duration="1944000" />
+      <workItem from="1539018906828" duration="2578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63507000" />
+    <option name="totallyTimeSpent" value="64141000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1093" y="56" width="1480" height="890" extended-state="0" />
+    <frame x="362" y="31" width="1480" height="890" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20833333" />
@@ -490,13 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/chartAccount.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/db.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -544,8 +529,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="408">
           <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/chartAccount.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
