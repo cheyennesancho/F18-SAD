@@ -1,0 +1,16 @@
+td {
+    border-bottom:1px solid black;
+}
+table, h3, h2, td, p, label {
+    color: white;
+} 
+#center {
+    position: relative;
+    width: 14%;
+    margin: 0 auto;
+  }
+  
+  #height {
+    margin-top:30px;
+    width: 250px
+  }

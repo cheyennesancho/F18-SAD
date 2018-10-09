@@ -84,4 +84,8 @@ export class UserPageComponent implements OnInit {
   createUser() {
     this.router.navigate(['AddUser']);
   }
+
+  chartOfAccounts() {
+    this.router.navigate(['AddAccount'])
+  }
 }

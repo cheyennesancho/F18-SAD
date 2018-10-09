@@ -1,0 +1,71 @@
+<div id="center">
+  <div id="height">
+    <h3>Create Account</h3>
+    <form #createAccountForm="ngForm">
+      <!-- <div class="form-group">
+        <label for="accountName">Account Name</label>
+        <input type="text" class="form-control" id="accountName" placeholder="Give an Account Name" required
+          [(ngModel)]="CoA.accountName" name="accountName" #acountName="ngModel">
+        <div [hidden]="accountName.valid || accountName.pristine" class="aler alert-danger">
+          Account Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="accountNumber">Account Number</label>
+        <input type="text" class="form-control" id="accountNumber" placeholder="Give an Account Number" required
+          [(ngModel)]="CoA.accountNumber" name="accountNumber" #acountName="ngModel">
+        <div [hidden]="accountNumber.valid || accountNumber.pristine" class="aler alert-danger">
+          Account Number is required
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <label for="accountType">Account Type</label>
+        <select name="accountType" id="accountType" (change)="accountTypeChosen()">
+          <option>Pick One</option>
+          <option value="assets">Assets</option>
+          <option value="liabilites">Liabilities</option>
+          <option value="equity">Equity</option>
+          <option value="revenue">Revenue</option>
+          <option value="expenses">Expenses</option>
+        </select>
+      </div>
+
+      <p id="test"></p>
+      <div class="form-group">
+        <div id="debit" class="normalSide" hidden=true>Debit</div>
+        <div id="credit" class="normalSide" hidden=true>Credit</div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="reportType">Report Type</label>
+        <select id="reportType">
+          <option>Pick a report type</option>
+          <option value="balanceSheet">Balance Sheet</option>
+          <option value="incomeStatement">Income Statement</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="originalBalance">Original Balance</label>
+        <input type="text" class="form-control" id="originalBalance" placeholder="Give an Account  Balance" required
+          [(ngModel)]="CoA.originalBalance" name="originalBalance" #acountName="ngModel">
+        <div [hidden]="originalBalance.valid || accountNumber.pristine" class="aler alert-danger">
+          Account Balance is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="active" placeholder="Active" required [(ngModel)]="CoA.active" name="active"
+          #acountName="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comments</label>
+        <input type="text" class="form-control" id="comment" placeholder="Comments" required [(ngModel)]="CoA.comment"
+          name="comment" #acountName="ngModel">
+      </div> -->
+    </form>
+  </div>
+</div>
