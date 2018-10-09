@@ -4,30 +4,4 @@ h2{
 
 h3{
     color: white;
-    
 }
-
-.form-user{
-    margin: auto;
-    width: 50%;
- 
-    border: 3px;
-    padding: 10px;
-    text-align: center;
-}
-
-
-.form-pass{
-    margin: auto;
-    width: 50%;
-    height: 50%;
-    text-align: center;
-}
-
-.form-btn{
-    margin: auto;
-    width: 50%;
-    height: 50%;
-    text-align: center;
-}
-
