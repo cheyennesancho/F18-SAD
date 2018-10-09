@@ -30,6 +30,18 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: true
         },
+        securityQ: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        securityA: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        lastUpdatePassword: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
         //set the starting value of an account to true (1)
         active: {
             type: Sequelize.INTEGER,

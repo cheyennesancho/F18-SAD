@@ -1,0 +1,15 @@
+div.topbar{
+  width: 17%;
+  margin: 0 auto;
+
+}
+div.center{
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-70%);
+}
+
+div.image{
+  display: flex;
+  justify-content: center;
+}

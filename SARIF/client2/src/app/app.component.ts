@@ -34,6 +34,9 @@ getSession(){
 getUserName(){
     return this.sessionSt.retrieve('userName');
 }
+getRole(){
+    return this.sessionSt.retrieve('userRole');
+  }
 delSession(){
     this.sessionSt.clear('userName');
     this.sessionSt.clear('id');

@@ -5,10 +5,15 @@ import { LoginComponent } from '../login/login.component';
 import { UserPageComponent } from '../user-page/user-page.component';
 import { AddUserComponent } from '../add-user/add-user.component';
 import { UserDetailsComponent } from '../user-details/user-details.component';
+import { LoginHomeComponent } from '../login-home/login-home.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: LoginHomeComponent
+  },
+  {
+    path: 'login',
     component: LoginComponent
   },
   {
@@ -39,7 +44,7 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const routingComponents = [
-  LoginComponent,
+  LoginHomeComponent,
   UserPageComponent,
   UserDetailsComponent,
 ]

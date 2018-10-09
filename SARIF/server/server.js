@@ -42,6 +42,7 @@ db.sequelize.sync({force: true}).then(() => {
 
 app.set('trust proxy', true)
 
+require('./app/routes/chartAccount.routes')(app);
 require('./app/routes/login.routes.js')(app);
 require('./app/routes/users.routes.js')(app);
 require('./app/routes/log.routes.js')(app);
@@ -59,13 +60,20 @@ function initial(){
 
     let users = [
         {
-            userName: "Joe",
-            userPassword: "Thomas",
+            userName: "admin",
+            userPassword: "password",
             userRole: "admin"
         },
         {
-            userName: "Bill",
-            userPassword: "James"
+            userName: "manager",
+            userPassword: "password",
+            userRole: "manager"
+        },
+        {
+            userName: "accountant",
+            userPassword: "password",
+            userRole: "accountant"
+
         },
 
     ]
