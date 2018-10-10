@@ -6,7 +6,6 @@ import { UserPageComponent } from '../user-page/user-page.component';
 import { AddUserComponent } from '../add-user/add-user.component';
 import { UserDetailsComponent } from '../user-details/user-details.component';
 import { LoginHomeComponent } from '../login-home/login-home.component';
-import { ChartOfAccountsComponent } from '../chart-of-accounts/chart-of-accounts.component';
 
 const routes: Routes = [
   {
@@ -29,10 +28,6 @@ const routes: Routes = [
     path: 'user/:id',
     component: UserDetailsComponent
   },
-  {
-    path: 'AddAccount',
-    component: ChartOfAccountsComponent
-  },
 ];
 
 
@@ -52,5 +47,5 @@ export const routingComponents = [
   LoginHomeComponent,
   UserPageComponent,
   UserDetailsComponent,
-  ChartOfAccountsComponent,
-]
+  AddUserComponent,
+];

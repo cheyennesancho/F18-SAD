@@ -1,10 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { AppComponent } from './../app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { UserDetailsComponent } from './../user-details/user-details.component';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
-import {AppComponent} from '../app.component';
 import { UserLogService } from '../services/user-log.service';
 import { UserService } from '../services/user.service';
+import { ModalComponent } from '../modal/modal.component';
+import { NgbModule, NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ModalComponent,
+    UserDetailsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    NgbModule.forRoot()
+  ],
+  providers: [
+    NgbActiveModal
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    UserDetailsComponent
+  ]
+})
 
 @Component({
   providers: [AppComponent],
@@ -24,6 +47,7 @@ export class UserPageComponent implements OnInit {
     private comp: AppComponent, 
     private logData: UserLogService,
     private userData: UserService,
+    private modalService: NgbModal,
     ) { }
 
   ngOnInit() {
@@ -88,4 +112,9 @@ export class UserPageComponent implements OnInit {
   chartOfAccounts() {
     this.router.navigate(['AddAccount'])
   }
+
+  open() {
+    const modalRef = this.modalService.open(UserDetailsComponent);
+    modalRef.componentInstance.title = 'UserDetails';
+}
 }

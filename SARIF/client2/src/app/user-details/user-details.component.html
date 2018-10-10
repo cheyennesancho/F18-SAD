@@ -1,4 +1,48 @@
-<table>
+<form #editUser="ngForm">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" placeholder="First Name" required [(ngModel)]="data.firstName"
+      name="firstName" #firstName="ngModel">
+
+
+
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required
+    [(ngModel)]="data.lastName" name="lastName" #lastName="ngModel">
+
+
+
+    <label for="userName">Username</label>
+    <input type="text" class="form-control" id="userName" placeholder="Username" required
+    [(ngModel)]="data.userName" name="userName" #userName="ngModel">
+       
+    <label for="userPassword">Password</label>
+    <input type="password" class="form-control" id="userPassword" placeholder="Password" required
+    [(ngModel)]="data.userPassword" name="userPassword" #userPassword="ngModel">
+    
+
+<!--
+<label for="+++">Password</label>
+    <input [(ngModel)]="data.+++" name="+++" #+++="ngModel">
+    </input>
+-->
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" placeholder="Email" required
+    [(ngModel)]="data.email" name="email" #email="ngModel">
+
+
+    <label for="active">Active</label>
+    <select [(ngModel)]="data.active" name="active" #active="ngModel">
+      <option value="1">Active</option>
+      <option value="0">Inactive</option>
+    </select>
+
+  </div>
+</form>
+<button class="btn btn-primary" (click)="updateUser()">Submit Changes</button>
+
+<div class= "form-group">
+  <table>
     <tr>
       <th>User ID</th>
       <th>First Name</th>
@@ -8,7 +52,7 @@
       <th>Email</th>
       <th>Active</th>
     </tr>
-    <tr>
+    <tr *ngFor="let user of data">
       <td></td>
       <td>{{ data.firstName }}</td>
       <td>{{ data.lastName }}</td>
@@ -19,18 +63,6 @@
     </tr>
     <tr>
       <td>{{ data.userId }}</td>
-      <td><input type="text" class="form-control" id="firstName" required
-      [(ngModel)]="data.firstName" name="firstName" #firstName="ngModel"></td>
-      <td><input type="text" class="form-control" id="lastName" required
-      [(ngModel)]="data.lastName" name="lastName" #firstName="ngModel"></td>
-      <td><input type="text" class="form-control" id="userName" required
-      [(ngModel)]="data.userName" name="userName" #firstName="ngModel"></td>
-      <td><input type="text" class="form-control" id="userPassword" required
-      [(ngModel)]="data.userPassword" name="userPassword" #firstName="ngModel"></td>
-      <td><input type="text" class="form-control" id="email" required
-      [(ngModel)]="data.email" name="email" #firstName="ngModel"></td>
-      <td><input type="text" class="form-control" id="active" required
-        [(ngModel)]="data.active" name="active" #firstName="ngModel"></td>
-    </tr>
-    <button class="btn btn-primary" (click)="updateUser()">Submit Changes</button>
+    </tr>    
   </table>
+</div>

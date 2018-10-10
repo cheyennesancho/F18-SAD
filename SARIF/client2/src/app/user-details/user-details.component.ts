@@ -5,6 +5,7 @@ import { UserService } from '../services/user.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { UserLogService } from '../services/user-log.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class UserDetailsComponent implements OnInit {
     userData = this.data;
     this.userService.updateUser(userData)
       .subscribe(() => {
-        console.log("User Updated Successfully");
+        console.log('User Updated Successfully');
         console.log(userData);
         this.logData.create(this.comp.getUserName(), 'Updated user').subscribe();
         this.router.navigate(['UserPage']);
