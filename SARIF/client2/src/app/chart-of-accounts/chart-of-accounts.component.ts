@@ -61,7 +61,7 @@ export class ChartOfAccountsComponent implements OnInit {
 
     //Set the current balance to the original balance
     this.CoA.currentBalance = this.CoA.originalBalance;
-
+    this.editCoA = this.CoA;
     this.coaService.addAccount(this.CoA)
       .subscribe(() => {
         this.logData.create(this.comp.getUserName(), 'Created account ' + this.CoA.accountName).subscribe();
@@ -98,13 +98,14 @@ export class ChartOfAccountsComponent implements OnInit {
     this.editCoA.caId = this.accountId;
 
     //Set asset and revenue account types to normal side debit
-    if (this.CoA.accountType == "Assets" || this.CoA.accountType == "Revenue") {
-      this.CoA.normalSide = "Debit";
+    if (this.editCoA.accountType == "Assets" || this.editCoA.accountType == "Revenue") {
+      this.editCoA.normalSide = "Debit";
     }
     else {
-      this.CoA.normalSide = "Credit";
+      this.editCoA.normalSide = "Credit";
     }
-
+    //Reset current balance to new orignal balance
+    this.editCoA.currentBalance = this.editCoA.originalBalance;
 
     this.coaService.updateAccount(this.editCoA)
       .subscribe(() => {

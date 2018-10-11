@@ -50,9 +50,15 @@
           [(ngModel)]="CoA.originalBalance" name="originalBalance" #originalBalance="ngModel">
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <input type="text" class="form-control" id="active" placeholder="Active or Inactive" required [(ngModel)]="CoA.active"
           name="active" #active="ngModel">
+      </div> -->
+      <div class="form-group">
+      <label class="switch">
+          <input type="checkbox"  class="form-control" id="active" [(ngModel)]="editCoA.active" name="active" #active="ngModel">
+          <span class="slider round"></span>
+          </label>
       </div>
 
       <div class="form-group">
@@ -114,12 +120,16 @@
 
       <div class="form-group">
         <input type="text" class="form-control" id="originalBalance" placeholder="Give Account Balance" required
-          [(ngModel)]="CoA.originalBalance" name="originalBalance" #originalBalance="ngModel">
+          [(ngModel)]="editCoA.originalBalance" name="originalBalance" #originalBalance="ngModel">
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="active" placeholder="Active or Inactive" required [(ngModel)]="editCoA.active"
-          name="active" #active="ngModel">
+        <!-- <input type="text" class="form-control" id="active" placeholder="Active or Inactive" required [(ngModel)]="editCoA.active"
+          name="active" #active="ngModel"> -->
+          <label class="switch">
+          <input type="checkbox" checked class="form-control" id="active" [(ngModel)]="editCoA.active" name="active" #active="ngModel">
+          <span class="slider round"></span>
+          </label>
       </div>
 
       <div class="form-group">
