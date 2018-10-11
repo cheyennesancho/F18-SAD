@@ -28,4 +28,13 @@ export class CoAService {
   addAccount(coa: CoA): Observable<CoA> {
     return this.http.post<CoA>(this.coaUrl, coa, httpOptions);
   }
+
+  getAccount(account: number): Observable<any> {
+    return this.http.get(`${this.coaUrl}/${account}`, httpOptions);
+  }
+
+  updateAccount(account): Observable<any> {
+    const body = JSON.stringify(account);
+    return this.http.put(this.coaUrl, body, httpOptions);
+  }
 }

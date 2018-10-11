@@ -12,7 +12,10 @@ import { ResourceLoader } from '@angular/compiler';
 })
 export class ChartOfAccountsComponent implements OnInit {
   CoA = new CoA();
+  editCoA = new CoA();
   accounts = [];
+  accountData = [];
+  accountId : number;
 
   constructor(
     private coaService: CoAService,
@@ -29,9 +32,13 @@ export class ChartOfAccountsComponent implements OnInit {
 
     //Closes modal when user clicks outside of modal
     window.onclick = function (event) {
-      let modal = document.getElementById("createAccountModal");
-      if (event.target == modal) {
-        modal.style.display = "none";
+      let createAccountModal = document.getElementById("createAccountModal");
+      if (event.target == createAccountModal) {
+        createAccountModal.style.display = "none";
+      }
+      let editAccountModal = document.getElementById("editAccountModal");
+      if (event.target == editAccountModal) {
+        editAccountModal.style.display = "none";
       }
     }
 
@@ -70,6 +77,43 @@ export class ChartOfAccountsComponent implements OnInit {
   close() {
     let modal = document.getElementById("createAccountModal");
     modal.style.display = "none";
+    let editModal = document.getElementById("editAccountModal");
+    editModal.style.display = "none";
   }
 
+  //Get account info to edit and load modal
+  getAccount(id: number) {
+    this.accountId = +id;
+    this.coaService.getAccount(this.accountId)
+      .subscribe((account) => {
+        this.accountData = account;
+        //console.log(account);
+      });
+    let modal = document.getElementById("editAccountModal");
+    modal.style.display = "block";
+  }
+
+  submitEdit() {
+    //Set the account Id correctly to chosen account
+    this.editCoA.caId = this.accountId;
+
+    //Set asset and revenue account types to normal side debit
+    if (this.CoA.accountType == "Assets" || this.CoA.accountType == "Revenue") {
+      this.CoA.normalSide = "Debit";
+    }
+    else {
+      this.CoA.normalSide = "Credit";
+    }
+
+
+    this.coaService.updateAccount(this.editCoA)
+      .subscribe(() => {
+        alert("Account updated");
+        console.log(this.editCoA);
+        this.logData.create(this.comp.getUserName(), 'Updated account ' + this.editCoA.accountName).subscribe();
+        let modal = document.getElementById("editAccountModal");
+        modal.style.display = "none";
+        location.reload();
+      })
+  }
 }
