@@ -53,8 +53,13 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  toggler(){
+  toggler() {
     this.data.changeToggle(2);
+
+  }
+
+  toggleReset(){
+    this.data.changeToggle(3);
 
   }
 

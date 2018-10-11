@@ -33,3 +33,15 @@ label.required { color: white; }
   position:absolute;
   right:6%;
 }
+
+#button2{
+  color: white;
+  margin: 0 auto;
+  position: relative;
+  right: -12%;
+}
+
+hr{
+  width: 250px;
+  border-color: white;
+}

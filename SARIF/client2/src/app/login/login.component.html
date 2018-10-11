@@ -41,6 +41,10 @@
     <button class="btn btn-link" (click)="toggler()" id="button1" >Register</button>
 
   </div>
+      <hr/>
+      <div class="form-group">
+        <button class="btn btn-link" (click)="toggleReset()" id="button2" >Reset Password</button>
+      </div>
   <div [hidden]="notLogged" class="alert alert-danger"  style="width: 250px;">
     Incorrect username or password
   </div>

@@ -42,6 +42,7 @@ db.sequelize.sync({force: true}).then(() => {
 
 app.set('trust proxy', true)
 
+require('./app/routes/passwordReset.routes')(app);
 require('./app/routes/chartAccount.routes')(app);
 require('./app/routes/login.routes.js')(app);
 require('./app/routes/users.routes.js')(app);
@@ -75,6 +76,13 @@ function initial(){
             userRole: "accountant"
 
         },
+        {
+            userName: "Bob",
+            userPassword: "password",
+            userRole: "accountant",
+            securityQ: "What is your favorite color?",
+            securityA: "Blue"
+        }
 
     ]
 
