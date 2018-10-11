@@ -78,9 +78,14 @@ function initial(){
 
     ]
 
+
     // Init data -> save to MySQL
     const User = db.users;
+
+
+
     for (let i = 0; i < users.length; i++) {
         User.create(users[i]);
     }
+
 }

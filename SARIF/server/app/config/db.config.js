@@ -24,9 +24,16 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //Models/tables
+db.journalFiles = require('../model/journalFiles.model')(sequelize, Sequelize);
+db.journalAccounts = require('../model/journalAccounts.model')(sequelize, Sequelize);
+db.journal = require('../model/journal.model')(sequelize, Sequelize);
 db.chartAccount = require('../model/chartAccount.model')(sequelize, Sequelize);
 db.users = require('../model/users.model.js')(sequelize, Sequelize);
 db.log = require('../model/log.model.js')(sequelize, Sequelize);
+
+//relations
+db.journalAccounts.belongsTo(db.journal);
+db.journal.hasMany(db.journalAccounts);
 
 
 module.exports = db;
