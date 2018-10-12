@@ -6,20 +6,26 @@
       <!-- Modal for account creation -->
       <div class="form-group">
         <label for="accountName">Account Name</label>
-        <input type="text" class="form-control" id="accountName" placeholder="Give Account Name" required [(ngModel)]="CoA.accountName"
-          name="accountName" #accountName="ngModel">
+        <input type="text" class="form-control" id="accountName" placeholder="Account Name" required [(ngModel)]="CoA.accountName"
+          name="accountName" #accountNam="ngModel">
+      </div>
+      <div [hidden]="accountNam.valid || accountNam.pristine" class="alert alert-danger" style="width: 250px;">
+        Account Name is required
       </div>
 
       <div class="form-group">
         <label for="accountNumber">Account Number</label>
-        <input type="text" class="form-control" id="accountNumber" placeholder="Give Account Number" required
-          [(ngModel)]="CoA.accountNumber" name="accountNumber" #accountNumber="ngModel">
+        <input type="text" class="form-control" id="accountNumber" placeholder="Account Number" required [(ngModel)]="CoA.accountNumber"
+          name="accountNumber" #accountNumbe="ngModel">
       </div>
+      <div [hidden]="accountNumbe.valid || accountNumbe.pristine" class="alert alert-danger" style="width: 250px;">
+        Account Number is required
+      </div>
+
 
       <div class="form-group">
         <label for="accountType">Account Type</label>
-        <select [(ngModel)]="CoA.accountType" name="accountType" #accountType="ngModel">
-          <option>Pick One</option>
+        <select required [(ngModel)]="CoA.accountType" name="accountType" #accountType="ngModel">
           <option>Assets</option>
           <option>Revenue</option>
           <option>Expenses</option>
@@ -30,8 +36,7 @@
 
       <div class="form-group">
         <label for="accountSubType">Account Subtype</label>
-        <select [(ngModel)]="CoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
-          <option>Pick One</option>
+        <select required [(ngModel)]="CoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
@@ -39,33 +44,38 @@
 
       <div class="form-group">
         <label for="reportType">Report Type</label>
-        <select [(ngModel)]="CoA.reportType" name="reportType" #reportType="ngModel">
-          <option>Pick One</option>
+        <select required [(ngModel)]="CoA.reportType" name="reportType" #reportType="ngModel">
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="originalBalance" placeholder="Give Account Balance" required
-          [(ngModel)]="CoA.originalBalance" name="originalBalance" #originalBalance="ngModel">
+        <input type="text" class="form-control" id="originalBalance" placeholder="Account Balance" required [(ngModel)]="CoA.originalBalance"
+          name="originalBalance" #balance="ngModel">
+      </div>
+      <div [hidden]="balance.valid || balance.pristine" class="alert alert-danger" style="width: 250px;">
+        Account Balance is required
       </div>
 
       <div class="form-group">
         <label for="active">Active</label>
-        <select [(ngModel)]="CoA.active" name="active" #active="ngModel">
-          <option>Pick One</option>
+        <select required [(ngModel)]="CoA.active" name="active" #activeInactive="ngModel">
           <option>Active</option>
           <option>Inactive</option>
         </select>
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="comment" placeholder="Account Comments" required [(ngModel)]="CoA.comment"
-          name="comment" #comment="ngModel">
+        <input type="text" class="form-control" id="comment" placeholder="Account Description" required [(ngModel)]="CoA.comment"
+          name="comment" #description="ngModel" required>
+      </div>
+      <div [hidden]="description.valid || description.pristine" class="alert alert-danger" style="width: 250px;">
+        Account Description is required
       </div>
 
-      <button (click)="submit()" id="submitBtn">Submit</button>
+
+      <button (click)="submit()" id="submitBtn" [disabled]="!addAccountForm.form.valid">Submit</button>
       <input type="reset">
       <button (click)="close()" id="closeModalBtn">Cancel</button>
     </form>
@@ -85,15 +95,11 @@
         <label for="accountNumber">Account Number</label>
         <input type="text" class="form-control" id="accountNumber" placeholder="Give Account Number" required
           [(ngModel)]="editCoA.accountNumber" name="accountNumber" #accountNumber="ngModel">
-        <div [hidden]="accountNumber.valid || accountNumber.pristine" class="alert alert-danger">
-          Account Number is Required
-        </div>
       </div>
 
       <div class="form-group">
         <label for="accountType">Account Type</label>
-        <select [(ngModel)]="editCoA.accountType" name="accountType" #accountType="ngModel">
-          <option>Pick One</option>
+        <select required [(ngModel)]="editCoA.accountType" name="accountType" #accountType="ngModel">
           <option>Assets</option>
           <option>Revenue</option>
           <option>Expenses</option>
@@ -104,8 +110,7 @@
 
       <div class="form-group">
         <label for="accountSubType">Account Subtype</label>
-        <select [(ngModel)]="editCoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
-          <option>Pick One</option>
+        <select required [(ngModel)]="editCoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
@@ -113,8 +118,7 @@
 
       <div class="form-group">
         <label for="reportType">Report Type</label>
-        <select [(ngModel)]="editCoA.reportType" name="reportType" #reportType="ngModel">
-          <option>Pick One</option>
+        <select required [(ngModel)]="editCoA.reportType" name="reportType" #reportType="ngModel">
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
@@ -127,7 +131,7 @@
 
       <div class="form-group">
         <label for="active">Active</label>
-        <select [(ngModel)]="CoA.active" name="active" #active="ngModel">
+        <select required [(ngModel)]="CoA.active" name="active" #active="ngModel">
           <option>Active</option>
           <option>Inactive</option>
         </select>

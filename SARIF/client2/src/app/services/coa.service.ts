@@ -34,10 +34,6 @@ export class CoAService {
     return this.http.get(`${this.coaUrl}/${account}`, httpOptions);
   }
 
-  findUser(accountName: string): Observable<any> {
-    return this.http.get(`${this.findAccountNameUrl}/${accountName}`, httpOptions);
-  }
-
   updateAccount(account): Observable<any> {
     const body = JSON.stringify(account);
     return this.http.put(this.coaUrl, body, httpOptions);

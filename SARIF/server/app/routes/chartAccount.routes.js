@@ -11,9 +11,6 @@ module.exports = function(app) {
     // Retrieve a single account by Id
     app.get('/api/chartOfAccounts/:caId', accounts.findById);
 
-    //Find account
-    app.get('/api/chartOfAccounts/account/:accountName', accounts.findAccount);
-
     // update a single account with Id
     app.put('/api/chartOfAccounts', accounts.update);
 }
