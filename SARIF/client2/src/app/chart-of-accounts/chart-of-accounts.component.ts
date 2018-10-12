@@ -4,6 +4,7 @@ import { AppComponent } from '../app.component';
 import { CoAService } from '../services/coa.service';
 import { UserLogService } from '../services/user-log.service';
 import { ResourceLoader } from '@angular/compiler';
+import { isEmpty } from 'rxjs/operators';
 
 @Component({
   selector: 'app-chart-of-accounts',
@@ -15,7 +16,7 @@ export class ChartOfAccountsComponent implements OnInit {
   editCoA = new CoA();
   accounts = [];
   accountData = [];
-  accountId : number;
+  accountId: number;
 
   constructor(
     private coaService: CoAService,
@@ -29,6 +30,7 @@ export class ChartOfAccountsComponent implements OnInit {
         this.accounts = account;
       }
     )
+
 
     //Closes modal when user clicks outside of modal
     window.onclick = function (event) {
@@ -51,26 +53,34 @@ export class ChartOfAccountsComponent implements OnInit {
   }
 
   submit() {
-    //Set asset and revenue account types to normal side debit
-    if (this.CoA.accountType == "Assets" || this.CoA.accountType == "Revenue") {
-      this.CoA.normalSide = "Debit";
-    }
-    else {
-      this.CoA.normalSide = "Credit";
-    }
+    console.log(this.CoA.accountName)
+    this.coaService.findUser(this.CoA.accountName)
+      .subscribe(account => {
+        console.log(account);
+      })
 
-    //Set the current balance to the original balance
-    this.CoA.currentBalance = this.CoA.originalBalance;
-    this.editCoA = this.CoA;
-    this.coaService.addAccount(this.CoA)
-      .subscribe(() => {
-        this.logData.create(this.comp.getUserName(), 'Created account ' + this.CoA.accountName).subscribe();
-        alert("Account Created");
-        //Close modal
-        let modal = document.getElementById("createAccountModal");
-        modal.style.display = "none";
-        location.reload();
-      });
+    // //Set asset and revenue account types to normal side debit
+    // if (this.CoA.accountType == "Assets" || this.CoA.accountType == "Revenue") {
+    //   this.CoA.normalSide = "Debit";
+    // }
+    // else {
+    //   this.CoA.normalSide = "Credit";
+    // }
+    // if (this.CoA.comment == "") {
+    //   console.log("empty")
+    // }
+    // //Set the current balance to the original balance
+    // this.CoA.currentBalance = this.CoA.originalBalance;
+    // this.editCoA = this.CoA;
+    // this.coaService.addAccount(this.CoA)
+    //   .subscribe(() => {
+    //     this.logData.create(this.comp.getUserName(), 'Created account ' + this.CoA.accountName).subscribe();
+    //     alert("Account Created");
+    //     //Close modal
+    //     let modal = document.getElementById("createAccountModal");
+    //     modal.style.display = "none";
+    //     location.reload();
+    //   });
   }
 
   //Closes modal after clicking on cancel in modal

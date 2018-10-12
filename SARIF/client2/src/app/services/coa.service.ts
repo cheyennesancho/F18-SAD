@@ -17,6 +17,7 @@ const httpOptions = {
 })
 export class CoAService {
   private coaUrl = 'http://localhost:8080/api/chartOfAccounts';  // URL to web api
+  private findAccountNameUrl = 'http://localhost:8080/api/chartOfAccounts/account';
   constructor(
     private http: HttpClient
   ) { }
@@ -31,6 +32,10 @@ export class CoAService {
 
   getAccount(account: number): Observable<any> {
     return this.http.get(`${this.coaUrl}/${account}`, httpOptions);
+  }
+
+  findUser(accountName: string): Observable<any> {
+    return this.http.get(`${this.findAccountNameUrl}/${accountName}`, httpOptions);
   }
 
   updateAccount(account): Observable<any> {

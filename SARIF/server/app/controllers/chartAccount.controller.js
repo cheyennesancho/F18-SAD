@@ -25,8 +25,20 @@ exports.findById = (req, res) => {
     ChartAccount.findById(req.params.caId).then(account => {
         res.json(account);
     })
-
 };
+
+exports.findAccount = (req, res) => {
+    let accountName = req.body.accountName;
+
+    ChartAccount.findOne({where: {accountName: accountName}})
+    .then((account) => {
+        if (!account) {
+            res.json("account not")
+        } else {
+            res.json("account not found");
+        }
+    })
+}
 
 exports.update = (req, res) => {
     let account = req.body;

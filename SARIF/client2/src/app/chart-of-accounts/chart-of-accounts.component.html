@@ -2,25 +2,24 @@
 <div id="createAccountModal" class="modal">
   <div class="modal-content">
     <form #addAccountForm="ngForm">
-      
+
       <!-- Modal for account creation -->
       <div class="form-group">
         <label for="accountName">Account Name</label>
         <input type="text" class="form-control" id="accountName" placeholder="Give Account Name" required [(ngModel)]="CoA.accountName"
           name="accountName" #accountName="ngModel">
       </div>
+
       <div class="form-group">
         <label for="accountNumber">Account Number</label>
         <input type="text" class="form-control" id="accountNumber" placeholder="Give Account Number" required
           [(ngModel)]="CoA.accountNumber" name="accountNumber" #accountNumber="ngModel">
-        <div [hidden]="accountNumber.valid || accountNumber.pristine" class="alert alert-danger">
-          Account Number is Required
-        </div>
       </div>
 
       <div class="form-group">
         <label for="accountType">Account Type</label>
         <select [(ngModel)]="CoA.accountType" name="accountType" #accountType="ngModel">
+          <option>Pick One</option>
           <option>Assets</option>
           <option>Revenue</option>
           <option>Expenses</option>
@@ -32,6 +31,7 @@
       <div class="form-group">
         <label for="accountSubType">Account Subtype</label>
         <select [(ngModel)]="CoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
+          <option>Pick One</option>
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
@@ -40,6 +40,7 @@
       <div class="form-group">
         <label for="reportType">Report Type</label>
         <select [(ngModel)]="CoA.reportType" name="reportType" #reportType="ngModel">
+          <option>Pick One</option>
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
@@ -50,15 +51,13 @@
           [(ngModel)]="CoA.originalBalance" name="originalBalance" #originalBalance="ngModel">
       </div>
 
-      <!-- <div class="form-group">
-        <input type="text" class="form-control" id="active" placeholder="Active or Inactive" required [(ngModel)]="CoA.active"
-          name="active" #active="ngModel">
-      </div> -->
       <div class="form-group">
-      <label class="switch">
-          <input type="checkbox"  class="form-control" id="active" [(ngModel)]="editCoA.active" name="active" #active="ngModel">
-          <span class="slider round"></span>
-          </label>
+        <label for="active">Active</label>
+        <select [(ngModel)]="CoA.active" name="active" #active="ngModel">
+          <option>Pick One</option>
+          <option>Active</option>
+          <option>Inactive</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -66,19 +65,19 @@
           name="comment" #comment="ngModel">
       </div>
 
+      <button (click)="submit()" id="submitBtn">Submit</button>
+      <input type="reset">
+      <button (click)="close()" id="closeModalBtn">Cancel</button>
     </form>
-
-    <button class="btn btn-primary" (click)="submit()" id="submitBtn">Submit</button>
-    <button class="btn btn-primary" (click)="close()" id="closeModalBtn">Cancel</button>
   </div>
 </div>
 
 <!-- Modal for account update -->
 <div id="editAccountModal" class="modal">
   <div class="modal-content">
-    <form #addAccountForm="ngForm">
+    <form #editAccountForm="ngForm">
       <div class="form-group">
-        <label for="accountName">Current Account Name:</label>
+        <label for="accountName">Current Account Name: {{ accountData.accountName }}</label>
         <input type="text" class="form-control" id="accountName" placeholder="Give Account Name" required [(ngModel)]="editCoA.accountName"
           name="accountName" #accountName="ngModel">
       </div>
@@ -94,6 +93,7 @@
       <div class="form-group">
         <label for="accountType">Account Type</label>
         <select [(ngModel)]="editCoA.accountType" name="accountType" #accountType="ngModel">
+          <option>Pick One</option>
           <option>Assets</option>
           <option>Revenue</option>
           <option>Expenses</option>
@@ -105,6 +105,7 @@
       <div class="form-group">
         <label for="accountSubType">Account Subtype</label>
         <select [(ngModel)]="editCoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
+          <option>Pick One</option>
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
@@ -113,6 +114,7 @@
       <div class="form-group">
         <label for="reportType">Report Type</label>
         <select [(ngModel)]="editCoA.reportType" name="reportType" #reportType="ngModel">
+          <option>Pick One</option>
           <option>Subtype 1</option>
           <option>Subtype 2</option>
         </select>
@@ -124,21 +126,20 @@
       </div>
 
       <div class="form-group">
-        <!-- <input type="text" class="form-control" id="active" placeholder="Active or Inactive" required [(ngModel)]="editCoA.active"
-          name="active" #active="ngModel"> -->
-          <label class="switch">
-          <input type="checkbox" checked class="form-control" id="active" [(ngModel)]="editCoA.active" name="active" #active="ngModel">
-          <span class="slider round"></span>
-          </label>
+        <label for="active">Active</label>
+        <select [(ngModel)]="CoA.active" name="active" #active="ngModel">
+          <option>Active</option>
+          <option>Inactive</option>
+        </select>
       </div>
 
       <div class="form-group">
         <input type="text" class="form-control" id="comment" placeholder="Account Comments" required [(ngModel)]="editCoA.comment"
           name="comment" #comment="ngModel">
       </div>
+      <button (click)="submitEdit()" id="submitEditBtn">Submit</button>
+      <button (click)="close()" id="closeModalBtn">Cancel</button>
     </form>
-    <button class="btn btn-primary" (click)="submitEdit()" id="submitEditBtn">Submit</button>
-    <button class="btn btn-primary" (click)="close()" id="closeModalBtn">Cancel</button>
   </div>
 </div>
 
