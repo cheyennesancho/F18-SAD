@@ -53,9 +53,13 @@ export class ChartOfAccountsComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.CoA.accountName);
-
-    //Set asset and revenue account types to normal side debit
+    if (isNaN(this.CoA.accountNumber)) {
+      return window.alert("Enter a number for account number");
+    };
+    if (isNaN(this.CoA.originalBalance)) {
+      return window.alert("Enter a number for the balance");
+    }
+     //Set asset and revenue account types to normal side debit
     if (this.CoA.accountType == "Assets" || this.CoA.accountType == "Revenue") {
       this.CoA.normalSide = "Debit";
     }
@@ -100,6 +104,13 @@ export class ChartOfAccountsComponent implements OnInit {
   }
 
   submitEdit() {
+    if (isNaN(this.editCoA.accountNumber)) {
+      return window.alert("Enter a number for account number");
+    };
+    if (isNaN(this.editCoA.originalBalance)) {
+      return window.alert("Enter a number for the balance");
+    }
+
     //Set the account Id correctly to chosen account
     this.editCoA.caId = this.accountId;
 
