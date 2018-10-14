@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec3ea87d-68f5-40e3-aaaf-6edd681a32bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts/chart-of-accounts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts/chart-of-accounts.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts/chart-of-accounts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts/chart-of-accounts.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts/chart-of-accounts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts/chart-of-accounts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/services/coa.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/services/coa.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/user-page/user-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/chartAccount.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/chartAccount.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/chartAccount.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/chartAccount.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/chartAccount.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/chartAccount.routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -372,12 +382,12 @@
       <workItem from="1538667031134" duration="49000" />
       <workItem from="1539018906828" duration="2578000" />
       <workItem from="1539215418567" duration="15856000" />
-      <workItem from="1539532978938" duration="251000" />
+      <workItem from="1539532978938" duration="735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80248000" />
+    <option name="totallyTimeSpent" value="80732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="144" y="125" width="1480" height="915" extended-state="0" />
