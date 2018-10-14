@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ec3ea87d-68f5-40e3-aaaf-6edd681a32bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/login-home/login-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login-home/login-home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/login-home/login-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login-home/login-home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login/login.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client2/src/app/services/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/services/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client2/src/app/chart-of-accounts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,15 +81,15 @@
     <session id="-1612732143">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.86" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -132,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
+            <state relative-caret-position="1411">
               <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
             </state>
           </provider>
@@ -151,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/login.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" column="18" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
+              <caret line="18" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -160,7 +154,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/passwrodReset.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -205,7 +199,7 @@
         <entry file="file://$PROJECT_DIR$/app/routes/users.routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="21" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="14" selection-end-column="40" />
+              <caret line="14" column="21" selection-start-line="13" selection-start-column="3" selection-end-line="14" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -214,7 +208,7 @@
         <entry file="file://$PROJECT_DIR$/app/routes/login.routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="35" lean-forward="true" selection-end-line="8" selection-end-column="1" />
+              <caret line="4" column="35" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -293,9 +287,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -336,12 +329,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539294576256" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539324538475" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -377,12 +371,13 @@
       <workItem from="1538538624398" duration="2040000" />
       <workItem from="1538667031134" duration="49000" />
       <workItem from="1539018906828" duration="2578000" />
-      <workItem from="1539215418567" duration="15237000" />
+      <workItem from="1539215418567" duration="15856000" />
+      <workItem from="1539532978938" duration="251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79378000" />
+    <option name="totallyTimeSpent" value="80248000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="144" y="125" width="1480" height="915" extended-state="0" />
@@ -510,9 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -580,9 +572,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/journalAccounts.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/journalAccounts.js" />
     <entry file="file://$PROJECT_DIR$/app/routes/journal.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -618,10 +608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/journal.controller.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+        <state relative-caret-position="1411">
+          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -632,17 +622,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/login.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
+          <caret line="18" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -653,20 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/users.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/login.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="35" lean-forward="true" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/passwordReset.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -674,17 +643,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/app/controllers/journal.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+        <state relative-caret-position="527">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/users.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" selection-start-line="13" selection-start-column="3" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/login.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="35" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/passwrodReset.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
         </state>
       </provider>
     </entry>

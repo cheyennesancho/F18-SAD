@@ -1,7 +1,7 @@
 export class CoA {
     caId: number;
     accountType: string;
-    acountSubType: string;
+    accountSubType: string;
     reportType: string;
     accountNumber: number;
     normalSide: string;
