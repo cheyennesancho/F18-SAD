@@ -1,3 +1,5 @@
+<div class="add_user">
+
 <div id="center" >
   <div id="height">
 <h3>Add User</h3>
@@ -54,3 +56,36 @@
 </div>
 </div>
 </div>
+</div>
+
+<button class="btn btn-info btn-lg" (click)="newUser()" >Create User</button>
+
+<div class="form-group">
+  <table id="accountTable">
+    <tr>
+      <th (click)="sort(1)">First Name</th>
+      <th (click)="sort(2)">Last Name</th>
+      <th (click)="sort(3)">Email</th>
+      <th (click)="sort(4)">User Role</th>
+      <th (click)="sort(5)">Active</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.userRole }}</td>
+      <td>{{ user.active }}</td>
+      <button class="btn btn-primary" (click)="getUser(user.userId)">{{ user.userId }}</button>
+    </tr>
+  </table>
+</div>
+
+<div id="editUser">
+  <table>
+    <tr *ngFor="let edit of editUser">
+      <td>{{ edit.userName }}</td>
+    </tr>
+  </table>
+</div>
+
+

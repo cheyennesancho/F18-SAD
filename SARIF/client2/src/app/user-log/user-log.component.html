@@ -1,0 +1,20 @@
+
+
+
+<div>
+  <table id="logTable">
+    <tr>
+      <th>Username</th>
+      <th>Action Type</th>
+      <th></th>
+      <th>Time</th>
+    <tr *ngFor="let log of logs">
+      <td>{{ log.userName }}</td>
+      <td>{{ log.actionType }}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>{{ log.createdAt }}</td>
+    </tr>
+  </table>
+</div>

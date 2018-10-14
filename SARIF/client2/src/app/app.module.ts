@@ -14,6 +14,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { LoginHomeComponent } from './login-home/login-home.component';
 import { ChartOfAccountsComponent } from './chart-of-accounts/chart-of-accounts.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserLogComponent } from './user-log/user-log.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     LoginHomeComponent,
     ChartOfAccountsComponent,
     ResetPasswordComponent,
+    UserLogComponent,
   ],
   imports: [
     BrowserModule,

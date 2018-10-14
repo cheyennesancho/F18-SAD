@@ -1,5 +1,5 @@
 h3, label, p {
-    color: white;
+  color: white;
 }
 td, th {
   border: 1px solid #6e7d93;
@@ -9,29 +9,13 @@ td, th {
 tr:nth-child(even) {
   background-color: #6e7d93;
 }
-
-
 table, h3, h2, td {
   color: white;
 }
 
-#center {
-  position: relative;
-  width: 14%;
-  margin: 0 auto;
-}
 
-#height {
-  margin-top:30px;
-  width: 250px
-}
-
-.add_user {
-  display: none;
-}
-
-#accountTable {
+#logTable {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 40%;
 }

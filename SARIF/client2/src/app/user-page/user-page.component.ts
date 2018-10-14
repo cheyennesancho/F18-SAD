@@ -18,6 +18,7 @@ export class UserPageComponent implements OnInit {
   users = [];
   logs = [];
   editUser = [];
+  currentpage = 0;
 
   constructor(private router: Router, 
     private loginService: LoginService, 
@@ -58,6 +59,16 @@ export class UserPageComponent implements OnInit {
     )
   }
 
+  viewCoA(){
+    this.currentpage = 1;
+  }
+  viewUserList(){
+    this.currentpage = 2;
+  }
+  viewLog(){
+    this.currentpage = 3;
+  }
+
   viewUsers() {
     this.userData.findAll().subscribe(
       (user) => {
@@ -68,65 +79,11 @@ export class UserPageComponent implements OnInit {
     )
   }
 
-  getUser(id: string) {
-    // let id = document.getElementById("userId").;
-    let userId = +id;
-    this.userData.getUser(userId).subscribe(
-      (getEditUser) => {
-        this.editUser = getEditUser;
-        document.getElementById("editUser").hidden = false; //Unhide table after onLog click
-        document.getElementById("showUsersTable").hidden = true;
-        this.router.navigate(['user/' + userId]);
-      }
-    )
-  }
-
   createUser() {
     this.router.navigate(['AddUser']);
   }
 
   chartOfAccounts() {
     this.router.navigate(['AddAccount'])
-  }
-
-  sort(n) {
-    var table, rows, switching, shouldSwitch, x, y, switchCount = 0;
-    table = document.getElementById("usersTable");
-    switching = true;
-    // Set the sorting direction to ascending:
-    let dir = "asc";
-    while (switching) {
-      switching = false;
-      rows = table.rows;
-
-      for (var i = 1; i < (rows.length - 1); i++) {
-        shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[n];
-        y = rows[i + 1].getElementsByTagName("TD")[n];
-
-        if (dir == "asc") {
-          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-            shouldSwitch = true;
-            break;
-          }
-        } else if (dir == "desc") {
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-            shouldSwitch = true;
-            break;
-          }
-        }
-      }
-
-      if (shouldSwitch) {
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-        switchCount++;
-      } else {
-        if (switchCount == 0 && dir == "asc") {
-          dir = "desc";
-          switching = true;
-        }
-      }
-    }
   }
 }

@@ -4,72 +4,22 @@
   <div class="sidenav">
     <div class = "container-fluid">
       <h2> {{indicator}} </h2>
-      <button class="btn btn-link" (click)="logOut()" id="button1" *ngIf="access == 1">User list</button>
-      <button class="btn btn-link" (click)="logOut()" id="button2" *ngIf="access == 1">User log</button>
-      <button class="btn btn-link" (click)="chartOfAccounts()" id="button3" >Chart of accounts</button>
+      <button class="btn btn-link" (click)="viewUserList()" id="button1" *ngIf="access == 1">User list</button>
+      <button class="btn btn-link" (click)="viewLog()" id="button2" *ngIf="access == 1">User log</button>
+      <button class="btn btn-link" (click)="viewCoA()" id="button3" >Chart of accounts</button>
       <button class="btn btn-link" (click)="logOut()" id="button4" >Journal</button>
       <button class="btn btn-link" (click)="logOut()" id="button5" >Log out</button>
     </div>
   </div>
+    <div class="right">
+      <ng-container [ngSwitch]="currentpage">
+      <app-chart-of-accounts *ngSwitchCase="1"></app-chart-of-accounts>
+        <app-add-user *ngSwitchCase="2"></app-add-user>
+        <app-user-log *ngSwitchCase="3"></app-user-log>
+        </ng-container>
+    </div>
 
-  <div class="right">
 
-
-  <div class="form-group">
-
-      <button class="btn btn-primary" (click)="onLog()" id="logBtn">View Log</button>
-      <button class="btn btn-primary" (click)="viewUsers()">View Users</button>
-      <button class="btn btn-primary" (click)="createUser()" >Add User</button>
-      <button class="btn btn-primary" (click)="logOut()" >Log out</button>
-      <div id="logTable" hidden>
-      <table>
-          <tr>
-              <th>Username</th>
-              <th>Action Type</th>
-              <th></th>
-              <th>Time</th>
-          <tr *ngFor="let log of logs">
-              <td>{{ log.userName }}</td>
-              <td>{{ log.actionType }}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>{{ log.createdAt }}</td>
-          </tr>
-      </table>
-      </div>
-      
-      <div id="showUsersTable" hidden>
-        <table id="usersTable">
-          <tr>
-            <th (click)="sort(0)">User Id</th>
-            <th (click)="sort(1)">First Name</th>
-            <th (click)="sort(2)">Last Name</th>
-            <th (click)="sort(3)">Email</th>
-            <th (click)="sort(4)">User Role</th>
-            <th (click)="sort(5)">Active</th>
-          </tr>
-          <tr *ngFor="let user of users">
-            <td>{{ user.userId }}</td>
-            <td>{{ user.firstName }}</td> 
-            <td>{{ user.lastName }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.userRole }}</td>
-            <td>{{ user.active }}</td>
-            <button class="btn btn-primary" (click)="getUser(user.userId)">{{ user.userId }}</button>
-          </tr>
-        </table>
-      </div>
-
-      <div id="editUser" hidden>
-        <table>
-          <tr *ngFor="let edit of editUser">
-            <td>{{ edit.userName }}</td>
-          </tr>
-        </table>
-      </div>
-</div>
-  </div>
   </div>
 
 </form>
