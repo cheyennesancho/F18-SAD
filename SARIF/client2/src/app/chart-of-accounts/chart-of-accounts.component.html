@@ -1,4 +1,5 @@
 <button class="btn btn-info btn-lg" (click)="createAccount()" id='createAccountBtn'>Create Account</button>
+<input [(ngModel)]="searchText" placeholder="Search Accounts">
 <div id="createAccountModal" class="modal">
   <div class="modal-content">
     <form #addAccountForm="ngForm">
@@ -169,7 +170,7 @@
       <th>Account Description</th>
       <th (click)="sort(9)">Active</th>
     </tr>
-    <tr *ngFor="let account of accounts">
+    <tr *ngFor="let account of accounts | filter : searchText">
       <td>{{ account.accountNumber }}</td>
       <td>{{ account.accountName }}</td>
       <td>{{ account.accountType }}</td>
