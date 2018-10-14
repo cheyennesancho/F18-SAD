@@ -62,7 +62,6 @@ export class ChartOfAccountsComponent implements OnInit {
     if (isNaN(this.CoA.originalBalance)) {
       return window.alert("Enter a number for the balance");
     };
-
     //Set asset and revenue account types to normal side debit
     if (this.CoA.accountType == "Assets" || this.CoA.accountType == "Revenue") {
       this.CoA.normalSide = "Debit";
@@ -82,17 +81,14 @@ export class ChartOfAccountsComponent implements OnInit {
         for (var i = 0; i < this.temp.length; i++) {
           //Check for account name
           if (this.temp[i].accountName == this.CoA.accountName) {
-            console.log("account name found");
             return window.alert("Account with same account name found. Enter different account name.");
           }
           //Check for account number
           if (this.temp[i].accountNumber == this.CoA.accountNumber) {
-            console.log("account number found");
             return window.alert("Account with the same account number found. Enter a different account number.")
           }
         }
         //If account name and number not found, create the account
-        console.log('not found');
         this.coaService.addAccount(this.CoA)
           .subscribe(() => {
             this.logData.create(this.comp.getUserName(), 'Created account ' + this.CoA.accountName).subscribe();
@@ -107,7 +103,7 @@ export class ChartOfAccountsComponent implements OnInit {
   }
 
   //Closes modal after clicking on cancel in modal
-  close() { 
+  close() {
     let modal = document.getElementById("createAccountModal");
     modal.style.display = "none";
     let editModal = document.getElementById("editAccountModal");
@@ -150,7 +146,6 @@ export class ChartOfAccountsComponent implements OnInit {
     this.coaService.findAll().subscribe(
       (account) => {
         this.temp = account;
-        this.x = false;
         for (var i = 0; i < this.temp.length; i++) {
           //Check for account name
           if (this.temp[i].accountName == this.editCoA.accountName) {
@@ -176,5 +171,67 @@ export class ChartOfAccountsComponent implements OnInit {
             return;
           });
       })
+  }
+  // search() {
+  //   this.coaService.findAll().subscribe(
+  //     (account) => {
+  //       this.temp = account;
+  //       for (var i = 0; i < this.temp.length; i++) {
+  //         //Check for account name
+  //         if (this.temp[i].accountName == this.search) {
+  //           console.log("account name found");
+  //           return window.alert("Account with same account name found. Enter different account name.");
+  //         }
+  //         //Check for account number
+  //         if (this.temp[i].accountNumber == this.search) {
+  //           console.log("account number found");
+  //           return window.alert("Account with the same account number found. Enter a different account number.")
+  //         }
+  //       }
+  //     })
+  // }
+  sort(n) {
+    var table, rows, switching, shouldSwitch, x, y, switchCount = 0;
+    table = document.getElementById("accountTable");
+    switching = true;
+    // Set the sorting direction to ascending:
+    let dir = "asc";
+    while (switching) {
+      switching = false;
+      rows = table.rows;
+
+      for (var i = 1; i < (rows.length - 1); i++) {
+        shouldSwitch = false;
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+
+        if (dir == "asc") {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        } else if (dir == "desc") {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+      }
+
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        switchCount++;
+      } else {
+        if (switchCount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+  }
+
+  isNegativeNumber(accountNumber) {
+    return (accountNumber < 0);
   }
 }
