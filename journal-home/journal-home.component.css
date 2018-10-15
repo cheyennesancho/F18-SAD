@@ -1,0 +1,17 @@
+.navbar-default .navbar-brand{
+    color: black;
+    font-size: 30px;
+  }
+  
+  .btn-default{
+    background-color: white;
+  }
+  
+  .navbar-bottom{
+    padding-bottom: 100px;
+  }
+  
+  .pt-3-half {
+  padding-top: 1.0rem;
+  }
+  
