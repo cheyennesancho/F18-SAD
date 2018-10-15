@@ -11,6 +11,31 @@ exports.create = (req, res) => {
     });
 };
 
+//checks if a username already exists
+exports.compareUserName = (req, res) => {
+    let userName = req.body.username;
+    Users.findOne({where: {userName: userName}}).then( user => {
+        if(!user){
+            res.json(1);
+        }
+        else{
+            res.json(2);
+        }
+    });
+};
+//checks if an email already exists
+exports.compareEmail = (req, res) => {
+    let email = req.body.email;
+    Users.findOne({where: {email: email}}).then( user => {
+        if(!user){
+            res.json(1);
+        }
+        else{
+            res.json(2);
+        }
+    });
+};
+
 // Fetch all Customers
 exports.findAll = (req, res) => {
     Users.findAll().then(users => {

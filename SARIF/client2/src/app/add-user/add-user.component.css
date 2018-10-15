@@ -1,4 +1,4 @@
-h3, label, p {
+h3, p {
     color: white;
 }
 td, th {
@@ -30,8 +30,47 @@ table, h3, h2, td {
   display: none;
 }
 
-#accountTable {
+#userTable {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.rightContent{
+  width: 400px;
+  z-index: 0;
+  overflow-x: hidden;
+  float: left;
+}
+
+.leftContent{
+  width: 400px;
+  margin-top:86px;
+  margin-left: 450px;
+}
+
+.warning{
+  color: red;
 }

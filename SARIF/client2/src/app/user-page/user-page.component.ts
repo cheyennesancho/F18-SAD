@@ -15,9 +15,7 @@ import { UserService } from '../services/user.service';
 export class UserPageComponent implements OnInit {
   indicator = '';
   access = 1;
-  users = [];
   logs = [];
-  editUser = [];
   currentpage = 0;
 
   constructor(private router: Router, 
@@ -67,23 +65,5 @@ export class UserPageComponent implements OnInit {
   }
   viewLog(){
     this.currentpage = 3;
-  }
-
-  viewUsers() {
-    this.userData.findAll().subscribe(
-      (user) => {
-        document.getElementById("logTable").hidden = true; //Unhide table after onLog click
-        document.getElementById("showUsersTable").hidden = false;
-        this.users = user;
-      }
-    )
-  }
-
-  createUser() {
-    this.router.navigate(['AddUser']);
-  }
-
-  chartOfAccounts() {
-    this.router.navigate(['AddAccount'])
   }
 }

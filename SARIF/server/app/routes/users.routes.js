@@ -5,6 +5,10 @@ module.exports = function(app) {
     // Create a new user
     app.post('/api/users', users.create);
 
+    app.post('/api/userNameCheck', users.compareUserName);
+
+    app.post('/api/passwordCheck', users.compareEmail);
+
     // Retrieve all users
     app.get('/api/users', users.findAll);
 

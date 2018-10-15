@@ -6,5 +6,7 @@ export class User {
   firstName: string;
   lastName: string;
   email: string;
+  securityQ: string;
+  securityA: string;
   active: number;
 }

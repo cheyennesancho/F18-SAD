@@ -17,6 +17,8 @@ const httpOptions = {
 })
 export class UserService {
   private usersUrl = 'http://localhost:8080/api/users';  // URL to web api
+  private compareUserNameURL = 'http://localhost:8080/api/userNameCheck';
+  private compareEmailURL = 'http://localhost:8080/api/passwordCheck';
   constructor(
     private http: HttpClient
   ) { }
@@ -52,6 +54,14 @@ export class UserService {
   updateUser(user): Observable<any> {
     const body = JSON.stringify(user);
     return this.http.put(this.usersUrl, body, httpOptions);
+  }
+
+  compareUsername(username): Observable<any>{
+    return this.http.post<User>(this.compareUserNameURL, {username: username}, httpOptions);
+  }
+
+  compareEmail(email): Observable<any>{
+    return this.http.post<User>(this.compareEmailURL, {email: email}, httpOptions);
   }
 
   

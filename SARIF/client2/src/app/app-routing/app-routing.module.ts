@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'AddAccount',
     component: ChartOfAccountsComponent
   },
+  {
+    path: 'addUser',
+    component: AddUserComponent
+  }
 ];
 
 
@@ -53,4 +57,5 @@ export const routingComponents = [
   UserPageComponent,
   UserDetailsComponent,
   ChartOfAccountsComponent,
+  AddUserComponent,
 ]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
 import { UserLogService } from '../services/user-log.service';
@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { AppComponent } from '../app.component';
 import {SharedDataService } from '../services/shared-data.service';
 import {Router} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
@@ -13,12 +14,16 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-user.component.css']
 })
 
-export class AddUserComponent implements OnInit{
-
+export class AddUserComponent implements OnInit {
+  @ViewChild('addUserForm') public userForm: NgForm;
   user = new User();
   users = [];
   editUser = [];
   submitted = false;
+  usernameExist = 0;
+  emailExist = 0;
+  passwordAcceptable = 0;
+  passwordError = 0;
 
   constructor(
     private userService: UserService,
@@ -41,26 +46,76 @@ export class AddUserComponent implements OnInit{
     );
   }
 
-  newUser(): void {
-    this.submitted = false;
-    this.user = new User();
+  createUser() {
+    let modal = document.getElementById("new_user");
+    modal.style.display = "block";
   }
 
- addUser() {
-   this.submitted = true;
-   this.save();
- }
+  close() {
+    let modal = document.getElementById("new_user");
+    modal.style.display = "none";
+    this.userForm.reset();
+    let editModal = document.getElementById("editAccountModal");
+    editModal.style.display = "none";
+  }
+  //check if the Username already exists
 
-  goBack(): void {
-    this.data.changeToggle(1);
+
+  compareUserName(event){
+    this.user.userName = event;
+    this.userData.compareUsername(this.user.userName).subscribe( response => {
+      console.log("button changed");
+      this.usernameExist = response;
+      console.log(this.usernameExist);
+    });
+  }
+//check if the Email already exists
+  compareEmail(event){
+    this.user.email = event;
+    this.userData.compareEmail(this.user.email).subscribe( response => {
+      this.emailExist = response;
+      console.log(this.emailExist);
+    });
   }
 
-  private save(): void {
-    this.userService.addUser(this.user)
+  submit(): void {
+    if(this.passwordAcceptable != 1){
+      this.passwordError = 1;
+    } else if (this.usernameExist !== 1 || this.emailExist !==1 ){
+      console.log("cannot continue");
+    } else {
+      this.userService.addUser(this.user)
         .subscribe(() => {
-          this.logData.create(this.comp.getUserName(), 'Created user ' + this.user.firstName).subscribe();
+          this.viewUsers();
+          this.close();
+          this.userForm.reset();
+
         });
+    }
   }
+
+  checkPassword(event){
+    this.user.userPassword = event;
+
+    let length = this.user.userPassword.length;
+    let result = this.user.userPassword.match(/[0-9]+/g);
+    let result2 = this.user.userPassword.match(/[%, #, $, *, &,+]+/g);
+    console.log(result);
+
+    if (this.user.userPassword.length >= 8 && result != null && result2 != null){
+        console.log('password is good');
+        this.passwordAcceptable = 1;
+        this.passwordError = 0;
+
+    }
+    else{
+      console.log('password is weak');
+      console.log(length);
+      this.passwordAcceptable = 0;
+      this.passwordError = 0;
+    }
+  }
+
 
   getUser(id: string) {
     // let id = document.getElementById("userId").;
