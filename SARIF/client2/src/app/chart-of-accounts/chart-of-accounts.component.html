@@ -40,16 +40,16 @@
       <div class="form-group">
         <label for="accountSubType">Account Subtype</label>
         <select required [(ngModel)]="CoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
-          <option>Subtype 1</option>
-          <option>Subtype 2</option>
+          <option>Assets current</option>
+          <option>Expenses current</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="reportType">Report Type</label>
         <select required [(ngModel)]="CoA.reportType" name="reportType" #reportType="ngModel">
-          <option>Subtype 1</option>
-          <option>Subtype 2</option>
+          <option>Balance Sheet</option>
+          <option>Income Statement</option>
         </select>
       </div>
 
@@ -113,20 +113,20 @@
           <option>Equity</option>
         </select>
       </div>
-
+      
       <div class="form-group">
         <label for="accountSubType">Account Subtype</label>
         <select required [(ngModel)]="editCoA.accountSubType" name="accountSubType" #accountSubType="ngModel">
-          <option>Subtype 1</option>
-          <option>Subtype 2</option>
+          <option>Assets current</option>
+          <option>Expenses current</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="reportType">Report Type</label>
         <select required [(ngModel)]="editCoA.reportType" name="reportType" #reportType="ngModel">
-          <option>Subtype 1</option>
-          <option>Subtype 2</option>
+          <option>Balance Sheet</option>
+          <option>Income Statement</option>
         </select>
       </div>
 
@@ -158,7 +158,7 @@
 
 <div class="form-group">
   <table id="accountTable">
-    <tr>
+    <tr>z
       <th (click)="sort(0)">Account Number</th>
       <th (click)="sort(1)">Account Name</th>
       <th (click)="sort(2)">Account Type</th>
